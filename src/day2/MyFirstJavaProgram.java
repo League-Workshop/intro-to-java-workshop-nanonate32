@@ -7,9 +7,11 @@ public class MyFirstJavaProgram {
 	
 	public static void main(String[] args) {
 		
-		// START HERE
-	
-		
+		// START HERE 
+	Robot nathaniel = new Robot();
+	nathaniel.setSpeed(2000000000);
+	nathaniel.turn(-90);
+	nathaniel.move(100000);
 		
 	}
 }
