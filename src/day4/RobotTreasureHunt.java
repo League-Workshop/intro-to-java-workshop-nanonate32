@@ -20,25 +20,25 @@ public class RobotTreasureHunt implements KeyEventDispatcher{
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
 		nathaniel.setAngle(0);
-		nathaniel.microMove(300);
+		nathaniel.microMove(20);
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
 		nathaniel.setAngle(180);
-		nathaniel.microMove(300);
+		nathaniel.microMove(20);
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
          nathaniel.setAngle(270);
-         nathaniel.microMove(300);
+         nathaniel.microMove(20);
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
 		nathaniel.setAngle(90);
-		nathaniel.microMove(300);
+		nathaniel.microMove(20);
 	}
 
 	private void spaceBarWasPressed() {
@@ -51,14 +51,17 @@ public class RobotTreasureHunt implements KeyEventDispatcher{
 		System.out.println(robotXLocation + " " +robotYLocation);
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
-		JOptionPane.showMessageDialog(null, " go to the Keep Out sign.");
+		if(robotXLocation == 730 && robotYLocation == 400 ) {
+		JOptionPane.showMessageDialog(null, " go to the Keep Out sign.");}
 		
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
-		
+		if(robotXLocation == 810 && robotYLocation == 300 ) {
+			JOptionPane.showMessageDialog(null, " go to the skull on top of the shack .");}
 		// 9.  If the robot is in the final location
 		//     --call the treasureFound() method
-		
+		if(robotXLocation == 250 && robotYLocation == 160 ) {
+			treasureFound();}
 	}
 
 	private void go() {
@@ -104,7 +107,7 @@ public class RobotTreasureHunt implements KeyEventDispatcher{
 	
 	static void treasureFound() {
 		try {
-			URI uri = new URI("https://www.youtube.com/watch?v=G0aIg4N6aro");
+			URI uri = new URI("https://youtu.be/5dsGWM5XGdg");
 			java.awt.Desktop.getDesktop().browse(uri);
 		} catch (Exception e) {
 			e.printStackTrace();
